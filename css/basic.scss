@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+$gradient: linear-gradient(60deg, #b9fffa,#02ffc8);
+$gradient2:  linear-gradient(60deg,#02ffc8, #b9fffa);
+
+
+body {
+  font-family: '맑은 고딕',Verdana, Geneva, Tahoma, sans-serif;
+  padding:50px;
+}
+button {
+  background:white;
+  cursor: pointer;
+}
+
+
+
+
+section {
+  max-width: 600px;
+  min-width: 360px;
+  margin: auto;
+  border-radius: 16px;
+    
+  header {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 16px 16px 0 0;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      height:10px;
+      width:42%;
+      background:black; /*linear-gradient(60deg, #b9fffa, #02ffc8);*/
+      border-radius: 30px;
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      height:10px;
+      width:42%;
+      border-radius: 30px;
+      background:black;
+    }
+  }
+
+  footer {
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+    .footer_input {
+      width: 100%; // 아래 +플러스가 있으니, 이걸로 하면 block 으로 바꿀 필요없음
+      height:40px;
+      padding: 0 32px;
+      outline: 0;
+      margin-bottom: 10px;
+      &::placeholder {
+        color:#ccc;
+      }
+    }
+    .footer_in {
+      display: flex;
+      align-items: center;
+      &::after {
+        content: '';
+        display: inline-block;
+        margin-left: 10px;
+        height:10px;
+        width:50%;
+        background:black; /*linear-gradient(60deg, #b9fffa, #02ffc8);*/
+        border-radius: 30px;
+      }
+
+
+      &::before {
+        content: '';
+        display: inline-block;
+        margin-right: 10px;
+        height:10px;
+        width:50%;
+        border-radius: 30px;
+        background:black;
+      }
+
+
+    }
+    .footer_addBtn {
+      width: 40px;
+      height: 48px;
+      font-size: 28px;
+      color: black;
+      transition: 0.3s ease-in;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    
+  }
+}
+
+.Todo2 {
+  display: none;
+}
+
+@media (max-width:669px) {
+
+  .Todo2 {
+    display: block;
+  }
+  .Todo1 {
+    display: none;
+  }
+}
+input[type="checkbox"] {
+  border-radius: 50%;
+
+}
+input[type="checkbox"]:checked+span.item_name {
+  text-decoration: line-through;
+  color:#d7e0ee;
+}
+
+
+
+
+
+ul.items {
+  height:400px;
+  overflow-y: auto;
+  padding-bottom:30px;
+  .item_row {
+    .item_row {}
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding:10px 32px;
+      .item_delBtn {
+        font-size: 14px;
+        color: #d7e0ee;
+        transition: 0.3s;
+        &:hover {
+          color: #B3C1D8;
+          transform: scale(1.1);
+        }
+      }
+
+      i {}
+    }
+    .item_divider {
+      width: 90%;
+      height: 1px;
+      background: #d7e0ee;
+      margin:auto;
+    }
+  }
+}
